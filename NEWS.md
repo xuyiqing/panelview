@@ -1,6 +1,8 @@
 # panelView 1.1.18
 
-Fix bugs with `collapse.history`
+1. Fix bugs with `collapse.history`.
+
+2. Set `shade.post = FALSE` by default.
 
 # panelView 1.1.17
 

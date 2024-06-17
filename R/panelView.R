@@ -173,6 +173,12 @@ panelview <- function(data, # a data frame (long-form)
         }
     }
 
+    if (by.group == TRUE) {
+        if (is.null(by.cohort)==FALSE) {
+            warning("option \"by.cohort\" is not allowed with \"by.group = TRUE\" or \"by.group.side = TRUE\". Ignored.")
+        }
+    }
+
 
     if (type == "missing" | type == "miss") {
         if (ignore.treat == 1) {
