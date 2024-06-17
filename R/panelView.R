@@ -35,7 +35,7 @@ panelview <- function(data, # a data frame (long-form)
                       axis.lab = "both",
                       axis.lab.gap = c(0, 0),
                       axis.lab.angle = NULL,
-                      shade.post = TRUE,
+                      shade.post = FALSE,
                       cex.main = 15,
                       cex.main.sub = 12,
                       cex.axis = 8,
