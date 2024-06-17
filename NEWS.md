@@ -1,3 +1,7 @@
+# panelView 1.1.18
+
+Fix bugs with `collapse.history`
+
 # panelView 1.1.17
 
 Add links to the [JSS paper](https://doi.org/10.18637/jss.v107.i07).

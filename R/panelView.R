@@ -75,7 +75,6 @@ panelview <- function(data, # a data frame (long-form)
 
 
 
-
     ## number of units
     N0 <- length(unique(data[, index[1]]))
     if (N0 <= 500) {        
@@ -85,15 +84,20 @@ panelview <- function(data, # a data frame (long-form)
         if (is.null(display.all)) {
             display.all <- FALSE
         }
-    } else { # more than 300 units
+    } else { # more than 500 units
         if (!is.null(collapse.history)) {
             if (is.null(display.all)) {
                 display.all <- FALSE
             }            
         } else { # collapse.history not specified
             if (is.null(display.all)) { # display.all not specified
-                collapse.history <- TRUE
-                display.all <- FALSE
+                if (type != "outcome") { # type != "outcome" sss
+                    collapse.history <- TRUE 
+                    display.all <- FALSE
+                } else {
+                    collapse.history <- FALSE
+                    display.all <- FALSE
+                }
             } else { # display.all specified
                 collapse.history <- FALSE
             }
@@ -109,7 +113,7 @@ panelview <- function(data, # a data frame (long-form)
     if (is.logical(by.cohort) == FALSE & !by.cohort%in%c(0, 1)) {
         stop("\"by.cohort\" is not a logical flag.")
     } 
-
+    
     if (is.logical(display.all) == FALSE & !display.all%in%c(0, 1)) {
         stop("\"display.all\" is not a logical flag.")
     }
@@ -178,6 +182,10 @@ panelview <- function(data, # a data frame (long-form)
 
     if (type != "outcome" & by.cohort == TRUE) {
         stop("option \"by.cohort = TRUE\" should be combined with \"type = \'outcome\'\"")
+    }
+
+    if (type == "outcome" & collapse.history == TRUE) { # sss
+        stop("option \"collapse.history = TRUE\" should not be combined with \"type = \'outcome\'\"")
     }
 
             
@@ -689,6 +697,7 @@ panelview <- function(data, # a data frame (long-form)
 
         D.d <- as.data.frame(t(D.f))
         suppressMessages(ff <- as.data.frame(summarise(group_by_all(D.d), COUNT = n())))
+        
 
         D <- t(as.matrix(ff[, 1:TT]))
         I <- t(as.matrix(ff[, (TT+1):(2*TT)]))
@@ -1443,7 +1452,7 @@ else if (leave.gap == 1) {
                         cat(paste0("Number of unique treatment histories: ", length(unique(data.old$treatment_history))))
                         cat("\n")
                         #print(data.old)
-                        #print(unique(data.old$treatment_history)) #sss
+                        #print(unique(data.old$treatment_history))
 
                         if (length(unique(data.old$treatment_history)) > 20) {
                             stop("\"by.cohort = TRUE\" ignored the number of unique treatment history is more than 20.")
@@ -1550,12 +1559,14 @@ else if (leave.gap == 1) {
                     plot.title = element_text(size=cex.main, hjust = 0.5, face="bold",margin = margin(8, 0, 8, 0)))
             
                 if (DID == TRUE && Ntr >= 1) {
-                    if (time.bf >= min(show) && time.bf <= max(show)) {
-                        p <- p + geom_vline(xintercept=time.bf,colour="white",size = 2)
-                        if (shade.post == TRUE) {
-                            p <- p + annotate("rect", xmin= time.bf, xmax= Inf,
-                                     ymin=-Inf, ymax=Inf, alpha = .3) 
-                        }                            
+                    if (exists("time.bf")) {
+                        if (time.bf >= min(show) && time.bf <= max(show)) {
+                            p <- p + geom_vline(xintercept=time.bf, colour="white", size = 2)
+                            if (shade.post == TRUE) {
+                                p <- p + annotate("rect", xmin= time.bf, xmax= Inf,
+                                                ymin=-Inf, ymax=Inf, alpha = .3) 
+                            }                            
+                        }
                     }
                 }
         

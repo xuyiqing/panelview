@@ -16,9 +16,9 @@ CRAN](https://cranlogs.r-pkg.org/badges/grand-total/panelView)](https://www.data
 **Authors:** Hongyu Mou (UCLA); Licheng Liu (MIT); [Yiqing
 Xu](https://yiqingxu.org/) (Stanford)
 
-**Date:** Sep 24, 2023
+**Date:** June 17, 2024
 
-**Repos:** [Github](https://github.com/xuyiqing/panelView) (1.1.17)
+**Repos:** [Github](https://github.com/xuyiqing/panelView) (1.1.18)
 [CRAN](https://cran.r-project.org/web/packages/panelView/index.html)
 (1.1.17)
 
