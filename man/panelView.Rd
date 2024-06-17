@@ -14,7 +14,7 @@
             legend.labs = NULL, main = NULL,
             pre.post = NULL, id = NULL, show.id = NULL,
             color = NULL, axis.adjust = FALSE, axis.lab = "both",
-            axis.lab.gap = c(0, 0), axis.lab.angle = NULL, shade.post = TRUE,
+            axis.lab.gap = c(0, 0), axis.lab.angle = NULL, shade.post = FALSE,
             cex.main = 15, cex.main.sub = 12, cex.axis = 8,
             cex.axis.x = NULL, cex.axis.y = NULL,
             cex.lab = 12, cex.legend = 12, background = NULL,

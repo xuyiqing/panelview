@@ -8,5 +8,6 @@
 ^vignettes$
 ^pkgdown$
 ^NEWS\.md$
+^NEWS\.html$
 ^README\.md$
 ^examples\.R
