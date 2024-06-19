@@ -13,14 +13,14 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.or
 CRAN](https://cranlogs.r-pkg.org/badges/grand-total/panelView)](https://www.datasciencemeta.com/rpackages)
 <!-- badges: end -->
 
-**Authors:** Hongyu Mou (UCLA); Licheng Liu (MIT); [Yiqing
-Xu](https://yiqingxu.org/) (Stanford)
+**Authors:** Hongyu Mou (UCLA); [Licheng Liu](https://liulch.github.io/)
+(MIT); [Yiqing Xu](https://yiqingxu.org/) (Stanford)
 
 **Date:** June 17, 2024
 
 **Repos:** [Github](https://github.com/xuyiqing/panelView) (1.1.18)
 [CRAN](https://cran.r-project.org/web/packages/panelView/index.html)
-(1.1.17)
+(1.1.18)
 
 **Examples:** R code used in the tutorial can be downloaded from
 [here](https://github.com/xuyiqing/panelView/blob/master/examples.R).

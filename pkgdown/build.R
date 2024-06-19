@@ -12,6 +12,7 @@ usethis::use_news_md() # update logs
 # remember to knitr README.Rmd
 library(pkgdown)
 build_site(install = FALSE)
+init_site()
 build_home()
 build_reference()
 build_articles()
